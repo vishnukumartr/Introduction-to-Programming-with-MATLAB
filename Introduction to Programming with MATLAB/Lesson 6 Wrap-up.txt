@@ -1,0 +1,15 @@
+%Function
+function [summa, index]= max_sum(v,n)   
+if n > length(v)
+        summa = 0;
+        index = -1;
+        return
+elseif n<=length(v)
+        a=movsum(v,[0,n-1]);
+        b=a(1:length(v)-n+1);
+        [summa,index]= max(b);
+end
+end
+
+%Code to call your function
+[summa, index] = max_sum([1 2 3 4 5 4 3 2 1],3)

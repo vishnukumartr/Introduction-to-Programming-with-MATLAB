@@ -1,0 +1,20 @@
+%Function
+function charnum  = char_counter(fname,character)
+    fid = fopen(fname,'rt');
+    if (fid<0) || ~ischar(character)
+        charnum = -1;
+        return;
+    end
+    oneline = fgets(fid);
+    charnum = 0;
+     while (ischar(oneline)) || (strcmp(character,oneline)==1)
+      f = strfind(oneline,character);
+      charnum = charnum + length(f);
+      oneline = fgets(fid);
+     end
+end
+
+%Code to call your function
+type('simple.txt')
+charnum = char_counter('simple.txt','a')
+charnum = char_counter('Frankenstein-by-Shelley.txt','?')

@@ -1,0 +1,11 @@
+%Function
+function out = picker(l,a,b)
+if l == 1
+    out = a
+elseif l == 0
+    out = b
+end
+
+%Code to call your function
+out = picker(true,1,2)
+out = picker(false,1,2)
